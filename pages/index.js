@@ -1,10 +1,10 @@
 "use client"
-import  from '../components/LanguageSwitcher';
-import {  } from '../contexts/LanguageContext';
+import LanguageSwitcher from '../components/LanguageSwitcher';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Home = () => {
+    const { language } = useLanguage();
     
-
     const content = {
         en: {
             welcome: 'Welcome to Next.js!'
@@ -15,12 +15,11 @@ const Home = () => {
         es: {
             welcome: '¡Bienvenido a Next.js!'
         }
-        // ... add other languages and translations as needed
     };
 
     return (
         <div>
-            <h1>{}</h1>
+            <h1>{content[language].welcome}</h1>
             <LanguageSwitcher />
         </div>
     );
